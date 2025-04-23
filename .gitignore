@@ -1,0 +1,19 @@
+# Node.js core
+node_modules/
+.env
+.DS_Store
+dist/
+build/
+
+# Sequelize
+config/config.json
+*.sqlite
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode or JetBrains stuff
+.vscode/
+.idea/

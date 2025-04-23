@@ -1,0 +1,28 @@
+{
+  "name": "car-dealership-orm",
+  "version": "1.0.0",
+  "description": "Create a complete system to manage car dealerships, their associated cars, users, and car ratings, with specific API endpoints and database features.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tigran008/car-dealership-orm.git"
+  },
+  "author": "Tigran Shahsuvaryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tigran008/car-dealership-orm/issues"
+  },
+  "homepage": "https://github.com/Tigran008/car-dealership-orm#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "sequelize-cli": "^6.6.2"
+  }
+}
