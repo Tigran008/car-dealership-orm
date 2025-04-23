@@ -14,7 +14,7 @@ const featureController = {
                     .json({ message: 'Car or Feature not found' });
             }
 
-            await car.addFeature(feature); // Sequelize magic
+            await car.addFeature(feature); 
 
             res.status(200).json({ message: 'Feature added to car' });
         } catch (error) {

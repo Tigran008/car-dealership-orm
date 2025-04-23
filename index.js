@@ -17,7 +17,7 @@ const featureRoutes = require('./routes/features');
 app.use('/api/features', featureRoutes);
 
 app.get('/', (req, res) => {
-    res.send('🚗 Car Dealership API is running!');
+    res.send('Car Dealership API is running!');
 });
 
 app.listen(PORT, () => {

@@ -5,7 +5,6 @@ const ratingController = {
         try {
             const { user_id, car_id, rate } = req.body;
 
-            // Basic validation
             if (rate < 0 || rate > 5) {
                 return res
                     .status(400)

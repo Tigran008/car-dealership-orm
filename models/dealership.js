@@ -30,8 +30,8 @@ module.exports = (sequelize) => {
         {
             sequelize,
             modelName: 'Dealership',
-            timestamps: false, // ❌ Disable createdAt/updatedAt
-            paranoid: true, // ✅ Enable soft delete via deletedAt
+            timestamps: false, 
+            paranoid: true, 
         }
     );
 

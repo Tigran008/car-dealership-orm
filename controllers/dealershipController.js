@@ -36,7 +36,6 @@ const dealershipController = {
             const dealershipId = req.params.id;
             const { make, model } = req.body;
 
-            // Check if dealership exists
             const dealership = await Dealership.findByPk(dealershipId);
             if (!dealership) {
                 return res
@@ -44,7 +43,6 @@ const dealershipController = {
                     .json({ message: 'Dealership not found' });
             }
 
-            // Create new car and assign dealershipId
             const car = await Car.create({
                 make,
                 model,
@@ -122,7 +120,6 @@ const dealershipController = {
                     .json({ message: 'Dealership not found' });
             }
 
-            // Add average rating per car
             const carsWithAvgRating = dealership.Cars.map((car) => {
                 const total = car.Ratings.reduce((sum, r) => sum + r.rate, 0);
                 const avgRating =

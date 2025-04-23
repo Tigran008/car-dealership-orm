@@ -17,7 +17,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'Users', // 👈 Make sure your table name is plural here
+                    model: 'Users', 
                     key: 'id',
                 },
                 onUpdate: 'CASCADE',
@@ -27,7 +27,7 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'Cars', // 👈 Plural again
+                    model: 'Cars',
                     key: 'id',
                 },
                 onUpdate: 'CASCADE',

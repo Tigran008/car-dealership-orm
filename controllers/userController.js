@@ -5,7 +5,6 @@ const userController = {
         try {
             const { userId, dealershipId } = req.params;
 
-            // Validate existence
             const user = await User.findByPk(userId);
             const dealership = await Dealership.findByPk(dealershipId);
 
@@ -15,7 +14,6 @@ const userController = {
                     .json({ message: 'User or Dealership not found' });
             }
 
-            // Assign user to dealership
             user.dealershipId = dealershipId;
             await user.save();
 
