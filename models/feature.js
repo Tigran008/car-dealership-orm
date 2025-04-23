@@ -5,7 +5,10 @@ module.exports = (sequelize) => {
     class Feature extends Model {
         static associate(models) {
             Feature.belongsToMany(models.Car, {
-                through: 'CarFeatures',
+                through: {
+                    model: 'CarFeatures',
+                    timestamps: false,
+                },
                 foreignKey: 'featureId',
             });
         }

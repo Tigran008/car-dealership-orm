@@ -7,7 +7,10 @@ module.exports = (sequelize) => {
             Car.belongsTo(models.Dealership, { foreignKey: 'dealershipId' });
             Car.hasMany(models.Rating, { foreignKey: 'carId' });
             Car.belongsToMany(models.Feature, {
-                through: 'CarFeatures',
+                through: {
+                    model: 'CarFeatures',
+                    timestamps: false,
+                },
                 foreignKey: 'carId',
             });
         }

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const { Dealership, Car } = require('../models');
+const { Dealership, Car, Rating, Feature, User } = require('../models');
 const { fn, col, literal } = Sequelize;
 
 const dealershipController = {
@@ -100,6 +100,7 @@ const dealershipController = {
                             {
                                 model: Feature,
                                 attributes: ['name'],
+                                through: { attributes: [] }, 
                             },
                             {
                                 model: Rating,
@@ -120,7 +121,7 @@ const dealershipController = {
                     .json({ message: 'Dealership not found' });
             }
 
-            const carsWithAvgRating = dealership.Cars.map((car) => {
+            const carsWithDetails = dealership.Cars.map((car) => {
                 const total = car.Ratings.reduce((sum, r) => sum + r.rate, 0);
                 const avgRating =
                     car.Ratings.length > 0
@@ -146,14 +147,15 @@ const dealershipController = {
                 address: dealership.address,
                 description: dealership.description,
                 users: dealership.Users,
-                cars: carsWithAvgRating,
+                cars: carsWithDetails,
             };
 
             res.status(200).json(result);
         } catch (error) {
+            console.error('Error fetching dealership details:', error);
             res.status(500).json({
                 message: 'Error fetching dealership details',
-                error,
+                error: error.message,
             });
         }
     }
